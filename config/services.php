@@ -33,6 +33,6 @@ return [
     'facebook' => [
         'client_id' => '1540937466175550',
         'client_secret' => 'dbc0321df93cdd0f1eac2870447045e5',
-        'redirect' => 'https://www.tutsmake.com/laravel-example/callback/facebook',
+        'redirect' => 'http://localhost:8000',
       ],
 ];
