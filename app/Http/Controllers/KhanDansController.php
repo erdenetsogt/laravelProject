@@ -27,14 +27,8 @@ class KhanDansController extends Controller
         
         return back()->with('success', 'Excel Imported, Download to see the imported data.');
 
-        /*
-        $str = '2020.03.02 13:01';
-        $date = strtotime(substr($str,5,2)."/".substr($str,8,2)."/".substr($str,0,4)." ".substr($str,11,2).":".substr($str,14,2));
-
-        
-        echo date('Y-M-d H:i:s', $date);
-        */
-    }
+    }    
+    
     public function showId()
     {
         echo Auth::check() ? Auth::user()->id : "Хоосон";
