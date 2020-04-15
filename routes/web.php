@@ -22,3 +22,7 @@ Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/import_excel', 'KhanDansController@create');
+Route::post('/imports', 'KhanDansController@imports');
+Route::get('/id', 'KhanDansController@showId');

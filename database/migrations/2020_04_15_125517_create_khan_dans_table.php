@@ -14,17 +14,17 @@ class CreateKhanDansTable extends Migration
     public function up()
     {
         Schema::create('khan_dans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id');            
             $table->integer('user_id')->unsigned();            
             $table->dateTime('date');
             $table->string('sub');            
-            $table->decimal('start',8,2);
-            $table->decimal('debit',8,2);
-            $table->decimal('credit',8,2);
-            $table->decimal('end',8,2);
-            $table->string('desc');
-            $table->string('dans');
+            $table->decimal('start',12,2);
+            $table->decimal('debit',12,2);
+            $table->decimal('credit',12,2);
+            $table->decimal('end',12,2);
+            $table->string('desc')->nullable();
+            $table->string('dans')->nullable();
+            $table->timestamps();    
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
