@@ -4,7 +4,6 @@ namespace App\Imports;
 
 use App\KhanDans;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Illuminate\Auth\UserInterface;
 use Illuminate\Support\Facades\Auth;
 
 class KhanDansImport implements ToModel

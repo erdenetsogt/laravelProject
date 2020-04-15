@@ -24,5 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/import_excel', 'KhanDansController@create');
-Route::post('/imports', 'KhanDansController@imports');
+Route::post('/imports', 'KhanDansController@importABC');
 Route::get('/id', 'KhanDansController@showId');
