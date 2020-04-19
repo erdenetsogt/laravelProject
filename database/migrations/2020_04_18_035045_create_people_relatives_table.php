@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeopleTable extends Migration
+class CreatePeopleRelativesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreatePeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('people_relatives', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('edited_user_id')->unsigned()->nullable();            
-            $table->string('registrNr',10);            
-            $table->string('familyName',25)->nullable();
-            $table->string('lastName',25)->nullable();
-            $table->string('firstName',25)->nullable();
-            $table->date('birthDate')->nullable();            
-            $table->integer('gender')->unsigned();            
+            $table->integer('relativeType')->unsigned()->nullable();            
+            $table->string('name',25)->nullable();
+            $table->string('birthYear',4)->nullable();
+            $table->string('liveLocation',100)->nullable();
+            $table->string('job')->nullable();                        
             $table->timestamps();
             $table->foreign('edited_user_id')->references('id')->on('users');
-            $table->foreign('gender')->references('id')->on('lovs');
+            $table->foreign('relativeType')->references('id')->on('lovs');
         });
     }
 
@@ -35,6 +34,6 @@ class CreatePeopleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('people_relatives');
     }
 }
